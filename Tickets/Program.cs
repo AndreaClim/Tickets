@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //CONEXION A LA BASE DE DATOS
-builder.Services.AddDbContext<DbContext>(options =>
+builder.Services.AddDbContext<ticketsDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TicketsDbConnection")));
 
 var app = builder.Build();
